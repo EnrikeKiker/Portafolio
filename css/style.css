@@ -1,0 +1,291 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Fanwood Text', serif;
+    color: #EEE;
+    background-color: #131313;
+}
+
+.logo{
+    width: 160px;
+    height: 160px;
+}
+
+.logo .fill{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.header{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    height: 20vh;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    font-family: 'Fanwood Text', serif;
+    font-size: 20px;
+}
+
+.menu ul a{
+    color: #EEE;
+    text-decoration: none;
+}
+.menu ul a:hover{
+    color: #2b6c7e;
+    text-decoration:underline;
+    filter: blur(0.8px);
+}
+.menu ul a.color1:hover{
+    text-decoration-color: #FF0000;
+    
+}
+.menu ul a.color2{
+    text-decoration-color: #00ff43;;
+}
+.menu ul a.color3{
+    text-decoration-color: #FFB300;
+}
+.menu ul a.color4{
+    text-decoration-color: #F1ff00;
+}
+
+.menu li{
+    padding: 1rem;/*La medida rem es en relacion a el tamaño de font-size que por defecto es 16px*/
+}
+
+.hero-image{
+    min-height: 100vh;
+    background-image: url("/home/kickerdemons/desarrollo/Portafolio/imagenes/FondoMadera.jpg");
+    background-repeat: round;
+    display: flex;
+}
+
+.tituloGrande{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    height: 70vh;
+}
+
+.tituloGrande h1{
+    font-size: 3vw;
+}
+
+.tituloChico{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-justify: distribute-all-lines;
+    width: 45%;
+    height: 70vh;
+    padding: 20px;
+}
+
+.tituloChico h3{
+    font-size: 2vw;
+}
+
+.info {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    font-family: 'Fanwood Text', serif;
+}
+
+.info p:hover{
+    color: #2b6c7e;
+}
+.contenedor h2{
+    text-align: center;
+}
+
+section h2{
+    text-align: center;
+    padding-bottom: 50px;
+}
+/*Formato a sección de habilidades*/
+
+.habilidades{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.descHabilidades{
+    width: 30%;
+}
+
+/*Formato a sección de habilidades (tarjetas)*/
+.contenedor-tarj{
+    background-color: #131313;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.tarjeta{
+    padding: 10px;
+    max-height: 250px;
+}
+
+svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    z-index: 1000;
+}
+
+svg circle{
+    width: 50%;
+    height: 50%;
+    fill: none;
+    stroke: #062b42;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px,5px);
+}
+
+.caja-tarjeta{
+    min-width: 150px;
+    max-height: 250px;
+}
+
+svg circle:nth-child(2){
+    stroke-dashoffset: 440;
+    stroke-dasharray: 440;
+}
+
+/*Asignar porcentaje y colores*/
+.tarjeta:nth-child(1), .tarjeta:nth-child(2), .tarjeta:nth-child(3), .tarjeta:nth-child(4), svg circle:nth-child(2){
+    stroke: #2b6c7e;
+}
+
+.tarjeta:nth-child(1):hover svg circle:nth-child(2){
+    stroke: #FF0000;
+    stroke-dashoffset: calc(440 - (440 * 50) / 100);
+    transition: 2s;
+}
+.tarjeta:nth-child(2):hover svg circle:nth-child(2){
+    stroke: #00FF43;
+    stroke-dashoffset: calc(440 - (440 * 60) / 100);
+    transition: 2s;
+}
+.tarjeta:nth-child(3):hover svg circle:nth-child(2){
+    stroke: #FFB300;
+    stroke-dashoffset: calc(440 - (440 * 30) / 100);
+    transition: 2s;
+}
+.tarjeta:nth-child(4):hover svg circle:nth-child(2){
+    stroke: #F1ff00;
+    stroke-dashoffset: calc(440 - (440 * 45) / 100);
+    transition: 2s;
+}
+
+/*Posicionar el numero de porcentaje*/
+.porcentaje{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.porcentaje .numero{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+section .numero h2{
+    padding-bottom: 0;
+}
+
+.tarjeta:hover .porcentaje{
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.espacioLetra{
+    padding-top: 20px;
+}
+
+/*Tarjetas de proyectos*/
+.proyectos{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.proyectos .caja-proyecto{
+    position: relative;
+    width: 20%;
+    height: 220px;
+    background-color: gray;
+    margin: 0 20px;
+    filter: grayscale(1);
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.proyectos .caja-proyecto:hover{
+    filter: grayscale(0);
+    -webkit-box-reflect: below -5px linear-gradient(transparent,#00040034);/*no lo soporta firefox*/
+}
+
+.fillproy{
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+.oculto{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    opacity: 0;
+}
+
+.oculto:hover{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background: #131313;
+    width: 100%;
+    height: 120px;
+    text-align: center;    
+    opacity: 1;
+    transition: all 500ms ease-out;
+}
+
+.oculto a{
+    text-decoration: none;
+    color: #EEE;
+    opacity: 1;
+}
